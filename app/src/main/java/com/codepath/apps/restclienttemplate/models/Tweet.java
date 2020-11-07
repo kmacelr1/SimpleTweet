@@ -19,7 +19,7 @@ public class Tweet {
         Tweet tweet = new Tweet();
         tweet.body = jsonObject.getString("text");
 
-        String formattedAbsoluteTime = TimeFormatter.getTimeStamp(jsonObject.getString("created_at"));
+        String formattedAbsoluteTime = TimeFormatter.getTimeDifference(jsonObject.getString("created_at"));
         //tweet.createdAt = jsonObject.getString("created_at");
         tweet.createdAt = formattedAbsoluteTime;
         tweet.user = User.fromJson(jsonObject.getJSONObject("user"));
